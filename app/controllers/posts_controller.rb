@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
+    @post.destroy!
     redirect_to @post
   end
 
@@ -37,6 +37,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :image)
+    params.require(:post).permit(:title)
   end
 end
